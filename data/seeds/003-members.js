@@ -88,7 +88,7 @@ exports.seed = function (knex) {
           },
           case_members: 3,
           predicted_exit_destination: 'temporary exit',
-          flag: null,
+          flag: '2',
           percent_complete: 0,
         },
         {
@@ -130,7 +130,7 @@ exports.seed = function (knex) {
           },
           case_members: 3,
           predicted_exit_destination: 'temporary exit',
-          flag: null,
+          flag: '3',
           percent_complete: 0,
         },
       ]);

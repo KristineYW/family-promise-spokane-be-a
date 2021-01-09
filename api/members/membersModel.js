@@ -46,6 +46,10 @@ const findOrCreateMember = async (memberObj) => {
   }
 };
 
+const findAllNotesByMemberId = (member_id) => {
+  return db('guest_notes').where({ member_id }).returning('*');
+};
+
 module.exports = {
   findAll,
   findBy,
@@ -56,4 +60,5 @@ module.exports = {
   findOrCreateMember,
   findByfamilyId,
   findMembersByFamilyId,
+  findAllNotesByMemberId,
 };
