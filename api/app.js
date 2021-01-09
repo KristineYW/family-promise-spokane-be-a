@@ -25,6 +25,7 @@ const familiesRouter = require('./families/familiesRouter');
 const memberRouter = require('./members/membersRouter');
 const notesRouter = require('./notes/notesRouter');
 const logsRouter = require('./guestLogs/logsRouter');
+const guestNotesRouter = require('./guestNotes/guestNotesRouter');
 
 const app = express();
 
@@ -53,7 +54,7 @@ app.use(cookieParser());
 app.use('/', indexRouter);
 app.use('/users', userRouter);
 app.use('/families', familiesRouter);
-app.use('/members', memberRouter);
+app.use('/members', memberRouter, guestNotesRouter);
 app.use('/notes', notesRouter);
 app.use('/logs', logsRouter);
 

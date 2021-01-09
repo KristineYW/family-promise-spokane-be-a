@@ -115,22 +115,4 @@ router.delete('/:id', authRequired, (req, res) => {
   }
 });
 
-// Member notes
-
-router.get('/:id/notes', async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const notes = await Members.findAllNotesByMemberId(id);
-
-    res.status(200).json({
-      notes,
-    });
-  } catch (error) {
-    res.status(500).json({
-      message: 'Internal server error',
-    });
-  }
-});
-
 module.exports = router;
